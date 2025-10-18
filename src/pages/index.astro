@@ -5,11 +5,17 @@ import Badge from "../components/Badge.astro";
 import LinkedInIcon from "../components/icons/LinkedIn.astro";
 import Socialpill from "../components/Socialpill.astro";
 import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
 ---
 
-<Layout>
+<Layout
+  title="Porfolio de Ignacio Valdés - Desarrolador Full Stack y futuro SOC"
+>
   <main>
-    <section class="w-full mx-auto lg:w-[740px] py-44">
+    <SectionContainer class="py-44 pb-24">
       <h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
         Hey, soy Ignacio <a
           href="https://www.linkedin.com/in/ignacio-bastián-valdés-espinoza-074aa7294"
@@ -24,15 +30,29 @@ import GitHubIcon from "../components/icons/GitHub.astro";
         Estudiante de Ingenieria Civil Informatica.
       </h2>
       <nav class="flex gap-x-2 mt-4">
-        <Socialpill href="https://www.linkedin.com/in/ignacio-bastián-valdés-espinoza-074aa7294">
-          <LinkedInIcon  class="w-6 h-6" />
+        <Socialpill
+          href="https://www.linkedin.com/in/ignacio-bastián-valdés-espinoza-074aa7294"
+        >
+          <LinkedInIcon class="size-6" />
           LinkedIn
         </Socialpill>
         <Socialpill href="https://github.com/ignacio-valdes">
-          <GitHubIcon class="w-6 h-6" />
+          <GitHubIcon class="size-6" />
           GitHub
         </Socialpill>
+        <Socialpill href="mailto:Ignacio.valdes.espinoza@outlook.com">
+          <MailIcon class="size-6" />
+          Ignacio.valdes.espinoza@outlook.com
+        </Socialpill>
       </nav>
-    </section>
+    </SectionContainer>
+
+    <SectionContainer id="experiencia">
+      <h2 class="text-4xl font-bold mb-6 flex items-center gap-x-3">
+        <Briefcase class="size-8" />
+        Experiencia
+      </h2>
+      <Experience />
+    </SectionContainer>
   </main>
 </Layout>
