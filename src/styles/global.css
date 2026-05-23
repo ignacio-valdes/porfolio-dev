@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  --color-text-primary: #F0F0F0;
+  --color-text-secondary: #E0E0E0;
+  --color-text-muted: #B0B0B0;
+}
+
+body {
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+}
+
+p, span, a {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: inherit;
+}

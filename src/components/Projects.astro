@@ -1,0 +1,98 @@
+---
+import GitHubIcon from "./icons/GitHub.astro";
+import ExternalLink from "./icons/ExternalLink.astro";
+
+const PROJECTS = [
+  {
+    title: "URL-scan",
+    description:
+      "Herramienta de ciberseguridad desarrollada con Python y FastAPI para analizar URLs mediante APIs externas de seguridad automatizando la detección de amenazas, phishing y malware.",
+    link: "https://github.com/ignacio-valdes/url-scan",
+    github: "https://github.com/ignacio-valdes/url-scan",
+    tags: ["Python", "FastAPI", "REST APIs", "Ciberseguridad"],
+  },
+  {
+    title: "Cleanpath",
+    description:
+      "Aplicación móvil residencial de gestión de limpieza desarrollada con Flutter que permite a los usuarios agendar, rastrear y gestionar servicios de limpieza para hogares y empresas.",
+    link: "https://github.com/ignacio-valdes/cleanpath",
+    github: "https://github.com/ignacio-valdes/cleanpath",
+    tags: ["Flutter", "Dart", "Firebase", "Gestión"],
+  },
+  {
+    title: "Marketfood",
+    description:
+      "Frontend de adquisiciones y abastecimiento desarrollado con React con panel de administración interactivo para gestión de proveedores y órdenes de compra.",
+    link: "https://github.com/ignacio-valdes/marketfood",
+    github: "https://github.com/ignacio-valdes/marketfood",
+    tags: ["React", "TypeScript", "Tailwind CSS", "E-commerce"],
+  },
+];
+
+const TAG_COLORS: Record<string, string> = {
+  Python: "bg-amber-600/30 text-amber-100 border-amber-500/40",
+  FastAPI: "bg-cyan-700/30 text-cyan-100 border-cyan-600/40",
+  "REST APIs": "bg-blue-700/30 text-blue-100 border-blue-600/40",
+  Ciberseguridad: "bg-red-700/30 text-red-100 border-red-600/40",
+  Flutter: "bg-cyan-600/30 text-cyan-100 border-cyan-500/40",
+  Dart: "bg-blue-600/30 text-blue-100 border-blue-500/40",
+  Firebase: "bg-orange-700/30 text-orange-100 border-orange-600/40",
+  React: "bg-cyan-600/30 text-cyan-100 border-cyan-500/40",
+  TypeScript: "bg-blue-600/30 text-blue-100 border-blue-500/40",
+  "Tailwind CSS": "bg-sky-700/30 text-sky-100 border-sky-600/40",
+  Django: "bg-emerald-700/30 text-emerald-100 border-emerald-600/40",
+  Vue: "bg-teal-600/30 text-teal-100 border-teal-500/40",
+  Gestión: "bg-purple-700/30 text-purple-100 border-purple-600/40",
+  "E-commerce": "bg-pink-700/30 text-pink-100 border-pink-600/40",
+  default: "bg-white/10 text-white border-white/20",
+};
+
+const getTagClasses = (tag: string): string => {
+  return TAG_COLORS[tag] ?? TAG_COLORS.default;
+};
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {
+    PROJECTS.map((project) => (
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 hover:scale-[1.02]">
+        <div class="aspect-video w-full bg-gradient-to-br from-purple-900/40 to-pink-900/40 flex items-center justify-center">
+          <span class="text-6xl font-bold text-gray-300">{project.title.charAt(0)}</span>
+        </div>
+        <div class="flex flex-1 flex-col gap-4 p-6">
+          <h3 class="text-xl font-bold text-white">{project.title}</h3>
+          <p class="text-sm leading-relaxed text-gray-300">{project.description}</p>
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span class={`text-xs px-2.5 py-1 rounded-full border ${getTagClasses(tag)}`}>
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div class="mt-auto flex gap-3 pt-2">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-all"
+              aria-label={`Ver código de ${project.title} en GitHub`}
+            >
+              <GitHubIcon class="size-4" />
+              Código
+            </a>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-all"
+              aria-label={`Ver ${project.title} en vivo`}
+            >
+              <ExternalLink class="size-4" />
+              Demo
+            </a>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>

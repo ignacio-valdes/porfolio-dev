@@ -1,0 +1,26 @@
+---
+import UserIcon from "./icons/UserIcon.astro";
+---
+
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center lg:items-start">
+  <div class="flex-1 space-y-5">
+    <p class="text-lg text-gray-300 leading-relaxed">
+      Soy <span class="text-white font-semibold">Ignacio Valdés</span>, estudiante de 5° año de Ingeniería Civil Informática en la Universidad Autónoma de Chile. Me apasiona construir software robusto que resuelve problemas reales y escala correctamente.
+    </p>
+    <p class="text-lg text-gray-300 leading-relaxed">
+      En Talana, trabajé como desarrollador Full-Stack usando <span class="text-white font-medium">Python, Django y Vue.js</span>. Optimicé consultas SQL, integré APIs REST y desarrollé módulos de software que mejoraron el rendimiento de Calculator v3. Mi objetivo a futuro es especializarme en ciberseguridad como Security Architect o analista SOC.
+    </p>
+    <p class="text-lg text-gray-300 leading-relaxed">
+      Cuando salgo del código, probablemente me encuentres entrenando rutas de ciclismo o preparando un buen mate mientras optimizo algún algoritmo. Creo que el balance entre cuerpo y mente mantiene la creatividad viva.
+    </p>
+  </div>
+  <div class="flex-shrink-0 flex flex-col items-center gap-4">
+    <div class="w-48 h-48 rounded-2xl bg-gray-800/50 border border-gray-700/50 flex items-center justify-center">
+      <UserIcon class="size-16 text-gray-500" />
+    </div>
+    <div class="flex justify-center w-full gap-x-4 mt-4">
+      <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">Ciclismo</span>
+      <span class="px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300">Yerba mate</span>
+    </div>
+  </div>
+</div>

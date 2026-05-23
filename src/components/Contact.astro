@@ -1,0 +1,37 @@
+---
+import Socialpill from "./Socialpill.astro";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import GitHubIcon from "./icons/GitHub.astro";
+import MailIcon from "./icons/Mail.astro";
+
+const EMAIL = "ignacio.valdes.espinoza@outlook.com";
+---
+
+<div class="w-full flex flex-col items-center text-center mx-auto space-y-6 max-w-2xl">
+  <p class="text-lg text-gray-300 leading-relaxed">
+    ¿Interesado en trabajar juntos o simplemente quieres saludar? No dudes en contactarme. Siempre estoy abierto a nuevas oportunidades y conversaciones interesantes.
+  </p>
+  
+  <a 
+    href={`mailto:${EMAIL}`}
+    class="inline-flex items-center gap-3 text-xl font-semibold text-white hover:text-emerald-400 transition-colors"
+  >
+    <MailIcon class="size-5" />
+    {EMAIL}
+  </a>
+
+  <div class="flex justify-center gap-4 pt-4">
+    <Socialpill href="https://www.linkedin.com/in/ignacio-bastián-valdés-espinoza-074aa7294">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </Socialpill>
+    <Socialpill href="https://github.com/ignacio-valdes">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </Socialpill>
+    <Socialpill href={`mailto:${EMAIL}`}>
+      <MailIcon class="size-4" />
+      Email
+    </Socialpill>
+  </div>
+</div>
