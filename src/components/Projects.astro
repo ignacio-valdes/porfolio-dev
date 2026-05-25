@@ -17,7 +17,7 @@ const PROJECTS = [
       "Aplicación móvil residencial de gestión de limpieza desarrollada con Flutter que permite a los usuarios agendar, rastrear y gestionar servicios de limpieza para hogares y empresas.",
     link: "https://github.com/ignacio-valdes/cleanpath",
     github: "https://github.com/ignacio-valdes/cleanpath",
-    tags: ["Flutter", "Dart", "Firebase", "Gestión"],
+    tags: ["Flutter", "Dart", "REST APIs", "Gestión"],
   },
   {
     title: "Marketfood",
@@ -69,7 +69,7 @@ const getTagClasses = (tag: string): string => {
               </span>
             ))}
           </div>
-          <div class="mt-auto flex gap-3 pt-2">
+          <div class="mt-auto pt-2">
             <a
               href={project.github}
               target="_blank"
@@ -79,16 +79,6 @@ const getTagClasses = (tag: string): string => {
             >
               <GitHubIcon class="size-4" />
               Código
-            </a>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white hover:bg-white/20 transition-all"
-              aria-label={`Ver ${project.title} en vivo`}
-            >
-              <ExternalLink class="size-4" />
-              Demo
             </a>
           </div>
         </div>
